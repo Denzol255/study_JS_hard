@@ -1,9 +1,9 @@
 "use strict";
 
-let num = 266219;
-let arr1 = num.toString().split("");
+const num = 266219;
+const numberArray = num.toString().split("");
 
-let total = arr1.reduce(function (a, b) {
+let total = numberArray.reduce(function (a, b) {
   return a * b;
 });
 
@@ -13,6 +13,6 @@ total = total ** 3;
 
 console.log(total);
 
-let arr2 = total.toString().split("");
+const totalArray = total.toString().split("");
 
-alert(`Первое число ${arr2[0]}, второе число ${arr2[1]}!`);
+alert(`Первое число ${totalArray[0]}, второе число ${totalArray[1]}!`);
