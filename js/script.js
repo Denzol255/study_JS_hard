@@ -17,6 +17,8 @@
 
 let lang = prompt("Выберите язык (введите 'ru' или 'eng')");
 
+// Решение через IF-----------------------------------------------------------------
+
 if (lang === "ru") {
   console.log(
     "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье!"
@@ -26,5 +28,22 @@ if (lang === "ru") {
     "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday!"
   );
 } else {
-  console.log("Вы неправильно выбрали язык");
+  console.log("Вы не выбрали язык или выбрали его неправильно");
+}
+
+// Решение через switch--------------------------------------------------------------
+
+switch (lang) {
+  case "ru":
+    console.log(
+      "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье!"
+    );
+    break;
+  case "eng":
+    console.log(
+      "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday!"
+    );
+    break;
+  default:
+    console.log("Вы не выбрали язык или выбрали его неправильно");
 }
