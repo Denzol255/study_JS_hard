@@ -75,3 +75,15 @@ let result =
     : lang === "eng"
     ? console.log(arrayOfDays[1].toString())
     : console.log("Вы не выбрали язык или выбрали его неправильно");
+
+//Задача 2---------------------------------------------------------------------------
+
+let namePerson = prompt("Введите полное имя", "Денис");
+let profession =
+  namePerson === "Артем"
+    ? console.log("Директор")
+    : namePerson === "Максим"
+    ? console.log("Преподаватель")
+    : namePerson === "Роман"
+    ? console.log("Куратор")
+    : console.log("Студент");
