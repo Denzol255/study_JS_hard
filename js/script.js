@@ -21,12 +21,10 @@ let lang = prompt("Выберите язык (введите 'ru' или 'eng')"
 
 if (lang === "ru") {
   console.log(
-    "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье!"
+    "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
   );
 } else if (lang === "eng") {
-  console.log(
-    "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday!"
-  );
+  console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
 } else {
   console.log("Вы не выбрали язык или выбрали его неправильно");
 }
@@ -36,14 +34,44 @@ if (lang === "ru") {
 switch (lang) {
   case "ru":
     console.log(
-      "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье!"
+      "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
     );
     break;
   case "eng":
     console.log(
-      "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday!"
+      "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
     );
     break;
   default:
     console.log("Вы не выбрали язык или выбрали его неправильно");
 }
+
+// Решение через многомерный массив--------------------------------------------------
+
+const arrayOfDays = [
+  [
+    "Понедельник",
+    "Вторник",
+    "Среда",
+    "Четверг",
+    "Пятница",
+    "Суббота",
+    "Воскресенье",
+  ],
+  [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ],
+];
+
+let result =
+  lang === "ru"
+    ? console.log(arrayOfDays[0].toString())
+    : lang === "eng"
+    ? console.log(arrayOfDays[1].toString())
+    : console.log("Вы не выбрали язык или выбрали его неправильно");
