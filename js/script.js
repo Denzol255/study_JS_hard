@@ -15,75 +15,97 @@
 
 // console.log(`Первое число ${totalArray[0]}, второе число ${totalArray[1]}!`);
 
-let lang = prompt("Выберите язык (введите 'ru' или 'eng')");
+// let lang = prompt("Выберите язык (введите 'ru' или 'eng')");
 
-// Решение через IF-----------------------------------------------------------------
+// // Решение через IF-----------------------------------------------------------------
 
-if (lang === "ru") {
-  console.log(
-    "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
-  );
-} else if (lang === "eng") {
-  console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
-} else {
-  console.log("Вы не выбрали язык или выбрали его неправильно");
-}
+// if (lang === "ru") {
+//   console.log(
+//     "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
+//   );
+// } else if (lang === "eng") {
+//   console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
+// } else {
+//   console.log("Вы не выбрали язык или выбрали его неправильно");
+// }
 
-// Решение через switch--------------------------------------------------------------
+// // Решение через switch--------------------------------------------------------------
 
-switch (lang) {
-  case "ru":
-    console.log(
-      "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
-    );
-    break;
-  case "eng":
-    console.log(
-      "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
-    );
-    break;
-  default:
-    console.log("Вы не выбрали язык или выбрали его неправильно");
-}
+// switch (lang) {
+//   case "ru":
+//     console.log(
+//       "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
+//     );
+//     break;
+//   case "eng":
+//     console.log(
+//       "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
+//     );
+//     break;
+//   default:
+//     console.log("Вы не выбрали язык или выбрали его неправильно");
+// }
 
-// Решение через многомерный массив--------------------------------------------------
+// // Решение через многомерный массив--------------------------------------------------
 
-const arrayOfDays = [
-  [
-    "Понедельник",
-    "Вторник",
-    "Среда",
-    "Четверг",
-    "Пятница",
-    "Суббота",
-    "Воскресенье",
-  ],
-  [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ],
-];
+// const arrayOfDays = [
+//   [
+//     "Понедельник",
+//     "Вторник",
+//     "Среда",
+//     "Четверг",
+//     "Пятница",
+//     "Суббота",
+//     "Воскресенье",
+//   ],
+//   [
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//     "Sunday",
+//   ],
+// ];
 
-let result =
-  lang === "ru"
-    ? console.log(arrayOfDays[0].toString())
-    : lang === "eng"
-    ? console.log(arrayOfDays[1].toString())
-    : console.log("Вы не выбрали язык или выбрали его неправильно");
+// let result =
+//   lang === "ru"
+//     ? console.log(arrayOfDays[0].toString())
+//     : lang === "eng"
+//     ? console.log(arrayOfDays[1].toString())
+//     : console.log("Вы не выбрали язык или выбрали его неправильно");
 
-//Задача 2---------------------------------------------------------------------------
+// //Задача 2---------------------------------------------------------------------------
 
-let namePerson = prompt("Введите полное имя", "Денис");
-let profession =
-  namePerson === "Артем"
-    ? console.log("Директор")
-    : namePerson === "Максим"
-    ? console.log("Преподаватель")
-    : namePerson === "Роман"
-    ? console.log("Куратор")
-    : console.log("Студент");
+// let namePerson = prompt("Введите полное имя", "Денис");
+// let profession =
+//   namePerson === "Артем"
+//     ? console.log("Директор")
+//     : namePerson === "Максим"
+//     ? console.log("Преподаватель")
+//     : namePerson === "Роман"
+//     ? console.log("Куратор")
+//     : console.log("Студент");
+
+// Урок 4----------------------------------------------------------------------------
+
+let stringCheckCut = function (str) {
+    if (typeof str !== "string") {
+      return "Вы ввели не строку";
+    } else {
+      str = str.trim();
+      if (str.length <= 30) {
+        return str;
+      } else {
+        str = str.slice(0, 30);
+        return str + "...";
+      }
+    }
+  },
+  sentenceFirst = " Москва - столица России     ",
+  sentenceSecond = "    Какая сегодня хорошая погода в городе Зеленоград ";
+
+console.log(stringCheckCut(123));
+console.log(stringCheckCut(sentenceFirst));
+console.log(stringCheckCut(sentenceSecond));
