@@ -1,111 +1,28 @@
 "use strict";
 
-// const num = 266219;
-// const numberArray = num.toString().split("");
+let arr = ["485206", "4697", "265035", "704650", "7180", "629003", "470762"];
 
-// let total = numberArray.reduce(function (a, b) {
-//   return a * b;
-// });
+arr.forEach((num) => {
+  if (num.startsWith("2") || num.startsWith("4")) {
+    console.log(num);
+  }
+});
 
-// const totalArray = total.toString().split("");
-
-// console.log(total);
-
-// total = total ** 3;
-
-// console.log(`Первое число ${totalArray[0]}, второе число ${totalArray[1]}!`);
-
-// let lang = prompt("Выберите язык (введите 'ru' или 'eng')");
-
-// // Решение через IF-----------------------------------------------------------------
-
-// if (lang === "ru") {
-//   console.log(
-//     "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
-//   );
-// } else if (lang === "eng") {
-//   console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
-// } else {
-//   console.log("Вы не выбрали язык или выбрали его неправильно");
-// }
-
-// // Решение через switch--------------------------------------------------------------
-
-// switch (lang) {
-//   case "ru":
-//     console.log(
-//       "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"
-//     );
-//     break;
-//   case "eng":
-//     console.log(
-//       "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
-//     );
-//     break;
-//   default:
-//     console.log("Вы не выбрали язык или выбрали его неправильно");
-// }
-
-// // Решение через многомерный массив--------------------------------------------------
-
-// const arrayOfDays = [
-//   [
-//     "Понедельник",
-//     "Вторник",
-//     "Среда",
-//     "Четверг",
-//     "Пятница",
-//     "Суббота",
-//     "Воскресенье",
-//   ],
-//   [
-//     "Monday",
-//     "Tuesday",
-//     "Wednesday",
-//     "Thursday",
-//     "Friday",
-//     "Saturday",
-//     "Sunday",
-//   ],
-// ];
-
-// let result =
-//   lang === "ru"
-//     ? console.log(arrayOfDays[0].toString())
-//     : lang === "eng"
-//     ? console.log(arrayOfDays[1].toString())
-//     : console.log("Вы не выбрали язык или выбрали его неправильно");
-
-// //Задача 2---------------------------------------------------------------------------
-
-// let namePerson = prompt("Введите полное имя", "Денис");
-// let profession =
-//   namePerson === "Артем"
-//     ? console.log("Директор")
-//     : namePerson === "Максим"
-//     ? console.log("Преподаватель")
-//     : namePerson === "Роман"
-//     ? console.log("Куратор")
-//     : console.log("Студент");
-
-// Урок 4----------------------------------------------------------------------------
-
-let stringCheckCut = function (str) {
-    if (typeof str !== "string") {
-      return "Вы ввели не строку";
-    } else {
-      str = str.trim();
-      if (str.length <= 30) {
-        return str;
-      } else {
-        str = str.slice(0, 30);
-        return str + "...";
-      }
+function isPrime(num) {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+    if (num % i === 0) {
+      return false;
     }
-  },
-  sentenceFirst = " Москва - столица России     ",
-  sentenceSecond = "    Какая сегодня хорошая погода в городе Зеленоград ";
+  }
+  return num > 1;
+}
 
-console.log(stringCheckCut(123));
-console.log(stringCheckCut(sentenceFirst));
-console.log(stringCheckCut(sentenceSecond));
+function getPrimes(num) {
+  for (let i = 2; i <= num; i++) {
+    if (isPrime(i)) {
+      console.log(i + ` Делители этого числа: 1 и ${i}`);
+    }
+  }
+}
+
+getPrimes(100);
