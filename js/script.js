@@ -1,28 +1,27 @@
 "use strict";
 
-let arr = ["485206", "4697", "265035", "704650", "7180", "629003", "470762"];
+let week = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
-arr.forEach((num) => {
-  if (num.startsWith("2") || num.startsWith("4")) {
-    console.log(num);
-  }
-});
+for (let i = 0; i < week.length; i++) {
+  const p = document.createElement("p");
+  let dayName = week[i],
+    date = new Date(),
+    today = date.getDay();
 
-function isPrime(num) {
-  for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
-    if (num % i === 0) {
-      return false;
-    }
+  if (i === 0 || i === 6) {
+    dayName = dayName.italics();
+  } else if (i === today) {
+    dayName = dayName.bold();
   }
-  return num > 1;
+  p.innerHTML = dayName;
+  p.className = `day-${i}`;
+  document.body.append(p);
 }
-
-function getPrimes(num) {
-  for (let i = 2; i <= num; i++) {
-    if (isPrime(i)) {
-      console.log(i + ` Делители этого числа: 1 и ${i}`);
-    }
-  }
-}
-
-getPrimes(100);
